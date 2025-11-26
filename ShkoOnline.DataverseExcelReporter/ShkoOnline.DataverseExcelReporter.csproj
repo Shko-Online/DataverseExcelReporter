@@ -1,0 +1,84 @@
+﻿<!--
+   Copyright 2025 Shko Online LLC <sales@shko.online>
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\ShkoOnline.DataverseExcelReporter.Version.props" />
+	<PropertyGroup>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<TargetFramework>net48</TargetFramework>
+		<ApplicationIcon>Shko-Online-Icon.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Description>Dataverse Excel Reporter is an XrmToolBox plugin that allows users to generate Excel reports from Dataverse data with ease, providing a user-friendly interface and powerful reporting capabilities.</Description>
+		<PackageTags>MSBuild MSBuildSdk dataverse PowerPlatform</PackageTags>
+		<PackageIcon>Logo.png</PackageIcon>
+		<RepositoryUrl>https://github.com/Shko-Online/DataverseExcelReporter.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="Shko-Online-Icon.ico" Pack="false" />
+		<None Remove="Resources\Logo.png" />
+		<Content Include="Resources\Logo.png" Pack="true" PackagePath="\" />
+		<None Include="..\LICENSE" Pack="true" PackagePath="\" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Update="Resources\ShkoOnline32x32.png">
+			<Namespace>ShkoOnline.DataverseExcelReporter</Namespace>
+			<ClassName>Resources</ClassName>
+			<ImageAsBase64Const>ShkoOnline32x32</ImageAsBase64Const>
+		</None>
+		<None Update="Resources\ShkoOnline80x80.png">
+			<Namespace>ShkoOnline.DataverseExcelReporter</Namespace>
+			<ClassName>Resources</ClassName>
+			<ImageAsBase64Const>ShkoOnline80x80</ImageAsBase64Const>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AlbanianXrm.ImageAsBase64Const.MSBuild" Version="1.0.1" PrivateAssets="All" />
+		<PackageReference Include="XrmToolBoxPackage" Version="1.2025.7.71" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.IdentityModel" Version="7.0.0" PrivateAssets="All" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludeXrmToolBoxToolAssemblies</TargetsForTfmSpecificContentInPackage>
+	</PropertyGroup>
+	<Target Name="IncludeXrmToolBoxToolAssemblies">
+		<ItemGroup>
+			<TfmSpecificPackageFile Include="$(OutputPath)XrmToolBox\Plugins\**\*.dll" PackagePath="lib/$(TargetFramework)/Plugins" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="PreparePackageReleaseNotesFromFile" BeforeTargets="GenerateNuspec">
+		<PropertyGroup>
+			<PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/ReleaseNotes.txt"))%0a$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/ReleaseNotesArchive.txt"))</PackageReleaseNotes>
+		</PropertyGroup>
+	</Target>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ShkoOnline.DataverseExcelReporter.Tool\ShkoOnline.DataverseExcelReporter.Tool.csproj" PrivateAssets="All" />
+		<ProjectReference Include="..\XrmToolBox\FakeXrmToolBoxPackage.csproj" />
+	</ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="IF NOT EXIST &quot;$(TargetDir)XrmToolBox&quot; mkdir &quot;$(TargetDir)XrmToolBox&quot;&#xD;&#xA;IF NOT EXIST &quot;$(TargetDir)XrmToolBox\Plugins&quot; mkdir &quot;$(TargetDir)XrmToolBox\Plugins&quot;&#xD;&#xA;IF NOT EXIST &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter&quot; mkdir &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter&quot;&#xD;&#xA;IF NOT EXIST &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter\it&quot; mkdir &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter\it&quot;&#xD;&#xA;move /Y &quot;$(TargetDir)ShkoOnline.DataverseExcelReporter.dll&quot; &quot;$(TargetDir)XrmToolBox\Plugins\&quot;&#xD;&#xA;move /y &quot;$(TargetDir)ShkoOnline.DataverseExcelReporter.Tool.dll&quot; &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter&quot;&#xD;&#xA;move /y &quot;$(TargetDir)it\ShkoOnline.DataverseExcelReporter.Tool.resources.dll&quot; &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter\it&quot;&#xD;&#xA;move /y &quot;$(TargetDir)AlbanianXrm.XrmToolBox.Shared.dll&quot; &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter&quot;&#xD;&#xA;move /y &quot;$(TargetDir)AlbanianXrm.BackgroundWorker.dll&quot; &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter&quot;&#xD;&#xA;move /y &quot;$(TargetDir)DocumentFormat.OpenXml.dll&quot; &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter&quot;&#xD;&#xA;move /y &quot;$(TargetDir)DocumentFormat.OpenXml.Framework.dll&quot; &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter&quot;&#xD;&#xA;&#xD;&#xA;IF &quot;$(ConfigurationName)&quot;==&quot;Debug&quot; (&#xD;&#xA;    move /Y &quot;$(TargetDir)ShkoOnline.DataverseExcelReporter.pdb&quot; &quot;$(TargetDir)XrmToolBox\Plugins\&quot;&#xD;&#xA;    move /y &quot;$(TargetDir)ShkoOnline.DataverseExcelReporter.Tool.pdb&quot; &quot;$(TargetDir)XrmToolBox\Plugins\ShkoOnline.DataverseExcelReporter&quot;&#xD;&#xA;    &#xD;&#xA;)" />
+	</Target>
+
+		
+	
+</Project>
