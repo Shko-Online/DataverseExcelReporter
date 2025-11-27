@@ -1,4 +1,6 @@
 ﻿using AlbanianXrm.BackgroundWorker;
+using ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic;
+using ShkoOnline.DataverseExcelReporter.Tool.Properties;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,6 +17,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
         public SplashScreen()
         {
             InitializeComponent();
+            this.LabelVersion.Text = $"v {typeof(SplashScreen).Assembly.GetName().Version}";
             backgroundWorkHandler.EnqueueBackgroundWork(
                 AlBackgroundWorkerFactory.NewAsyncWorker<bool, int>(CountToTen, SplashProgress, SplashShownFor10Seconds)
             );
@@ -44,10 +47,10 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
         private void SplashShownFor10Seconds(bool cancelled, Exception exception)
         {
             if (cancelled) return;
-            this.Close();
+            Close();
             viewModel.SplashShowing = false;
         }
-              
+
         internal SplashScreen(ToolViewModel viewModel) : this()
         {
             this.viewModel = viewModel;
@@ -56,8 +59,13 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
         private void ButtonStartUsingTool_Click(object sender, EventArgs e)
         {
             cancellationTokenSource.Cancel();
-            this.Close();
+            Close();
             viewModel.SplashShowing = false;
+        }
+
+        private void LinkLabelContactUs_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MailTo.PrepareSendEmail(Resources.EMAIL_SUBJECT, Resources.EMAIL_BODY);
         }
     }
 }

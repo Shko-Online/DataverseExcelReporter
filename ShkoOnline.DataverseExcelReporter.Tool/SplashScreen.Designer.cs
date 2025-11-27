@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.LabelVersion = new System.Windows.Forms.Label();
             this.LinkLabelContactUs = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LabelToolTitle = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.Controls.Add(this.LabelVersion, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.LinkLabelContactUs, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.LabelToolTitle, 0, 1);
@@ -62,13 +64,24 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(744, 754);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // LabelVersion
+            // 
+            this.LabelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelVersion.AutoSize = true;
+            this.LabelVersion.Location = new System.Drawing.Point(3, 666);
+            this.LabelVersion.Name = "LabelVersion";
+            this.LabelVersion.Size = new System.Drawing.Size(51, 88);
+            this.LabelVersion.TabIndex = 1;
+            this.LabelVersion.Text = "v1.0.0";
+            this.LabelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // LinkLabelContactUs
             // 
-            this.LinkLabelContactUs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.LinkLabelContactUs.AutoEllipsis = true;
             this.LinkLabelContactUs.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.LinkLabelContactUs, 2);
+            this.LinkLabelContactUs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LinkLabelContactUs.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.LinkLabelContactUs.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LinkLabelContactUs.LinkArea = new System.Windows.Forms.LinkArea(56, 73);
@@ -76,12 +89,13 @@
             this.LinkLabelContactUs.Location = new System.Drawing.Point(3, 315);
             this.LinkLabelContactUs.Name = "LinkLabelContactUs";
             this.LinkLabelContactUs.Padding = new System.Windows.Forms.Padding(10);
-            this.LinkLabelContactUs.Size = new System.Drawing.Size(954, 527);
+            this.LinkLabelContactUs.Size = new System.Drawing.Size(738, 351);
             this.LinkLabelContactUs.TabIndex = 11;
             this.LinkLabelContactUs.TabStop = true;
             this.LinkLabelContactUs.Text = "Enjoying this free tool from Shko Online? Contact us at sales@shko.online";
             this.LinkLabelContactUs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LinkLabelContactUs.UseCompatibleTextRendering = true;
+            this.LinkLabelContactUs.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelContactUs_LinkClicked);
             // 
             // panel1
             // 
@@ -120,7 +134,7 @@
             this.ButtonStartUsingTool.Name = "ButtonStartUsingTool";
             this.ButtonStartUsingTool.Size = new System.Drawing.Size(387, 78);
             this.ButtonStartUsingTool.TabIndex = 3;
-            this.ButtonStartUsingTool.Text = "Start Using Tool";
+            this.ButtonStartUsingTool.Text = "Start Using Tool (9s)";
             this.ButtonStartUsingTool.UseVisualStyleBackColor = true;
             this.ButtonStartUsingTool.Click += new System.EventHandler(this.ButtonStartUsingTool_Click);
             // 
@@ -157,5 +171,6 @@
         private System.Windows.Forms.ToolTip ToolTipShareAnonymousTelemetry;
         private System.Windows.Forms.Button ButtonStartUsingTool;
         private System.Windows.Forms.LinkLabel LinkLabelContactUs;
+        private System.Windows.Forms.Label LabelVersion;
     }
 }

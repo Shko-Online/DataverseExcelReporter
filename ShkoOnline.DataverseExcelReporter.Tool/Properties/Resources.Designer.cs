@@ -91,6 +91,30 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hi,
+        ///thanks for this amazing tool!
+        ///
+        ///I am interested in learning more about your products and services.
+        ///
+        ///Best regards,
+        ///[Your Name].
+        /// </summary>
+        internal static string EMAIL_BODY {
+            get {
+                return ResourceManager.GetString("EMAIL_BODY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thanks for Dataverse Excel Reporter.
+        /// </summary>
+        internal static string EMAIL_SUBJECT {
+            get {
+                return ResourceManager.GetString("EMAIL_SUBJECT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generating Report.
         /// </summary>
         internal static string Generating_Report {

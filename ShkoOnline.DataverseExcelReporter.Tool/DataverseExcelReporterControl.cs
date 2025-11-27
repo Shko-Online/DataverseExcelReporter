@@ -19,6 +19,7 @@ using McTools.Xrm.Connection;
 using Microsoft.Xrm.Sdk;
 using ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic;
 using ShkoOnline.DataverseExcelReporter.Tool.DataModel;
+using ShkoOnline.DataverseExcelReporter.Tool.Properties;
 using System;
 using System.Windows.Forms;
 using XrmToolBox.Extensibility;
@@ -39,6 +40,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
         private readonly ToolViewModel viewModel = new ToolViewModel();
         private readonly MetadataHandler metadataHandler;
         private readonly ExcelReportGenerator excelReportGenerator;
+        private bool shouldShowSplash = true;
 
         public event EventHandler<StatusBarMessageEventArgs> SendMessageToStatusBar;
 
@@ -62,8 +64,11 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
         {
             switch (e.PropertyName)
             {
+                case nameof(viewModel.GenerateReport_Enabled):
+                    ButtonGenerateReport.Enabled = viewModel.GenerateReport_Enabled;
+                    break;
                 case nameof(viewModel.PendingOperationCTS):
-                    ButtonGenerateReport.Enabled = viewModel.PendingOperationCTS == null;
+               
                     ButtonCancelReportGeneration.Enabled = viewModel.PendingOperationCTS != null;
                     ButtonCancelReportGeneration.Visible = viewModel.PendingOperationCTS != null;
                     break;
@@ -106,14 +111,19 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
 
         private void DataverseExcelReporterControl_Load(object sender, EventArgs e)
         {
+            if (!shouldShowSplash)
+            {
+                return;
+            }
             viewModel.ActiveConnection = ConnectionDetail != null;
             if (viewModel.ActiveConnection)
             {
                 metadataHandler.LoadTables(Service);
             }
             var splash = new SplashScreen(viewModel);
+            splash.Show(this);
             viewModel.SplashShowing = true;
-            splash.ShowDialog(this);
+            shouldShowSplash = false;
         }
 
         public override void UpdateConnection(IOrganizationService newService, ConnectionDetail detail, string actionName, object parameter)
@@ -139,7 +149,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
 
         private void LinkLabelContactUs_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("mailto:sales@shko.online?subject=Thanks%20for%20Dataverse%20Excel%20Reporter&body=Hi,%0Athanks%20for%20this%20amazing%20tool!%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20products%20and%20services.%0A%0ABest%20regards,%0A[Your%20Name]");
+            MailTo.PrepareSendEmail(Resources.EMAIL_SUBJECT, Resources.EMAIL_BODY);
         }
 
         private void ButtonRefreshMetadata_Click(object sender, EventArgs e)

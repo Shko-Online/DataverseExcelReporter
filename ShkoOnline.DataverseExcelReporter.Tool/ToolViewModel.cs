@@ -33,6 +33,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
                 _ActiveConnection = value;
 
                 NotifyPropertyChanged(nameof(ActiveConnection));
+                Update_GenerateReport_Enabled();
             }
         }
 
@@ -46,20 +47,27 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
                 _SplashShowing = value;
 
                 NotifyPropertyChanged(nameof(SplashShowing));
+                Update_GenerateReport_Enabled();
             }
         }
 
-        private bool _ShareAnonymousTelemetry = true;
-        public bool ShareAnonymousTelemetry
+        private bool _GenerateReport_Enabled = true;
+        public bool GenerateReport_Enabled
         {
-            get { return _ShareAnonymousTelemetry; }
-            set
-            {
-                if (_ShareAnonymousTelemetry == value) return;
-                _ShareAnonymousTelemetry = value;
+            get { return _GenerateReport_Enabled; }
+        }
 
-                NotifyPropertyChanged(nameof(ShareAnonymousTelemetry));
-            }
+        private void Update_GenerateReport_Enabled()
+        {
+            var newValue = !_SplashShowing &&
+                                _ActiveConnection &&
+                                _SelectedTable != null &&
+                                _SelectedTableView != null &&
+                                _SelectedDocumentTemplate != null &&
+                                _PendingOperationCTS == null;
+            if (_GenerateReport_Enabled == newValue) return;
+            _GenerateReport_Enabled = newValue;
+            NotifyPropertyChanged(nameof(GenerateReport_Enabled));
         }
 
         private List<DataverseTable> _Tables = new List<DataverseTable>();
@@ -90,6 +98,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
                     new List<TableView>() :
                     _TableViews.FindAll(dt => dt.Table.Equals(_SelectedTable));
                 NotifyPropertyChanged(nameof(SelectedTable));
+                Update_GenerateReport_Enabled();
             }
         }
 
@@ -125,6 +134,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
                 if (_SelectedDocumentTemplate == value) return;
                 _SelectedDocumentTemplate = value;
                 NotifyPropertyChanged(nameof(SelectedDocumentTemplate));
+                Update_GenerateReport_Enabled();
             }
         }
 
@@ -160,10 +170,11 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
                 if (_SelectedTableView == value) return;
                 _SelectedTableView = value;
                 NotifyPropertyChanged(nameof(SelectedTableView));
+                Update_GenerateReport_Enabled();
             }
         }
 
-        private CancellationTokenSource _PendingOperationCTS = new CancellationTokenSource();
+        private CancellationTokenSource _PendingOperationCTS;
         public CancellationTokenSource PendingOperationCTS
         {
             get { return _PendingOperationCTS; }
@@ -171,6 +182,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
             {
                 _PendingOperationCTS = value;
                 NotifyPropertyChanged(nameof(PendingOperationCTS));
+                Update_GenerateReport_Enabled();
             }
         }
     }

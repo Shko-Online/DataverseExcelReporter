@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Generating_Report" xml:space="preserve">
-    <value>Generazione del report</value>
-  </data>
   <data name="Loading_Document_Templates" xml:space="preserve">
     <value>Caricamento dei modelli di documento</value>
+  </data>
+  <data name="Generating_Report" xml:space="preserve">
+    <value>Generazione del report</value>
   </data>
 </root>

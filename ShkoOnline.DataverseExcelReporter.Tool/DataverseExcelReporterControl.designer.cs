@@ -25,8 +25,11 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataverseExcelReporterControl));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ComboBoxView = new ShkoOnline.DataverseExcelReporter.Tool.CustomControls.TableViewFilteringCombobox();
             this.LabelView = new System.Windows.Forms.Label();
+            this.ComboBoxDocument = new ShkoOnline.DataverseExcelReporter.Tool.CustomControls.DocumentTemplateFilteringCombobox();
             this.LabelTemplate = new System.Windows.Forms.Label();
+            this.ComboBoxTable = new ShkoOnline.DataverseExcelReporter.Tool.CustomControls.DataverseTableFilteringCombobox();
             this.LabelTable = new System.Windows.Forms.Label();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.LinkLabelContactUs = new System.Windows.Forms.LinkLabel();
@@ -34,9 +37,6 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
             this.ButtonCancelReportGeneration = new System.Windows.Forms.ToolStripButton();
             this.ButtonGenerateReport = new System.Windows.Forms.ToolStripButton();
             this.ButtonRefreshMetadata = new System.Windows.Forms.ToolStripButton();
-            this.ComboBoxView = new ShkoOnline.DataverseExcelReporter.Tool.CustomControls.TableViewFilteringCombobox();
-            this.ComboBoxDocument = new ShkoOnline.DataverseExcelReporter.Tool.CustomControls.DocumentTemplateFilteringCombobox();
-            this.ComboBoxTable = new ShkoOnline.DataverseExcelReporter.Tool.CustomControls.DataverseTableFilteringCombobox();
             this.tableLayoutPanel1.SuspendLayout();
             this.ToolStripCommands.SuspendLayout();
             this.SuspendLayout();
@@ -55,17 +55,41 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
             this.tableLayoutPanel1.Controls.Add(this.ToolStripCommands, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
+            // ComboBoxView
+            // 
+            this.ComboBoxView.DisplayMember = "DisplayName";
+            resources.ApplyResources(this.ComboBoxView, "ComboBoxView");
+            this.ComboBoxView.Name = "ComboBoxView";
+            this.ComboBoxView.ValueMember = "ViewId";
+            this.ComboBoxView.SelectedValueChanged += new System.EventHandler(this.ComboBoxView_SelectedValueChanged);
+            // 
             // LabelView
             // 
             resources.ApplyResources(this.LabelView, "LabelView");
             this.LabelView.AutoEllipsis = true;
             this.LabelView.Name = "LabelView";
             // 
+            // ComboBoxDocument
+            // 
+            this.ComboBoxDocument.DisplayMember = "DisplayName";
+            resources.ApplyResources(this.ComboBoxDocument, "ComboBoxDocument");
+            this.ComboBoxDocument.Name = "ComboBoxDocument";
+            this.ComboBoxDocument.ValueMember = "TemplateId";
+            this.ComboBoxDocument.SelectedValueChanged += new System.EventHandler(this.ComboBoxDocument_SelectedValueChanged);
+            // 
             // LabelTemplate
             // 
             resources.ApplyResources(this.LabelTemplate, "LabelTemplate");
             this.LabelTemplate.AutoEllipsis = true;
             this.LabelTemplate.Name = "LabelTemplate";
+            // 
+            // ComboBoxTable
+            // 
+            this.ComboBoxTable.DisplayMember = "DisplayName";
+            resources.ApplyResources(this.ComboBoxTable, "ComboBoxTable");
+            this.ComboBoxTable.Name = "ComboBoxTable";
+            this.ComboBoxTable.ValueMember = "LogicalName";
+            this.ComboBoxTable.SelectedValueChanged += new System.EventHandler(this.ComboBoxTable_SelectedValueChanged);
             // 
             // LabelTable
             // 
@@ -123,30 +147,6 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
             resources.ApplyResources(this.ButtonRefreshMetadata, "ButtonRefreshMetadata");
             this.ButtonRefreshMetadata.Name = "ButtonRefreshMetadata";
             this.ButtonRefreshMetadata.Click += new System.EventHandler(this.ButtonRefreshMetadata_Click);
-            // 
-            // ComboBoxView
-            // 
-            this.ComboBoxView.DisplayMember = "DisplayName";
-            resources.ApplyResources(this.ComboBoxView, "ComboBoxView");
-            this.ComboBoxView.Name = "ComboBoxView";
-            this.ComboBoxView.ValueMember = "ViewId";
-            this.ComboBoxView.SelectedValueChanged += new System.EventHandler(this.ComboBoxView_SelectedValueChanged);
-            // 
-            // ComboBoxDocument
-            // 
-            this.ComboBoxDocument.DisplayMember = "DisplayName";
-            resources.ApplyResources(this.ComboBoxDocument, "ComboBoxDocument");
-            this.ComboBoxDocument.Name = "ComboBoxDocument";
-            this.ComboBoxDocument.ValueMember = "TemplateId";
-            this.ComboBoxDocument.SelectedValueChanged += new System.EventHandler(this.ComboBoxDocument_SelectedValueChanged);
-            // 
-            // ComboBoxTable
-            // 
-            this.ComboBoxTable.DisplayMember = "DisplayName";
-            resources.ApplyResources(this.ComboBoxTable, "ComboBoxTable");
-            this.ComboBoxTable.Name = "ComboBoxTable";
-            this.ComboBoxTable.ValueMember = "LogicalName";
-            this.ComboBoxTable.SelectedValueChanged += new System.EventHandler(this.ComboBoxTable_SelectedValueChanged);
             // 
             // DataverseExcelReporterControl
             // 
