@@ -24,9 +24,10 @@
 
 	<PropertyGroup>
 		<Description>Dataverse Excel Reporter is an XrmToolBox plugin that allows users to generate Excel reports from Dataverse data with ease, providing a user-friendly interface and powerful reporting capabilities.</Description>
-		<PackageTags>MSBuild MSBuildSdk dataverse PowerPlatform</PackageTags>
+		<PackageTags>XrmToolBox Excel dataverse PowerPlatform</PackageTags>
 		<PackageIcon>Logo.png</PackageIcon>
 		<RepositoryUrl>https://github.com/Shko-Online/DataverseExcelReporter.git</RepositoryUrl>
+		<PackageProjectUrl>https://shko.online/DataverseExcelReporter</PackageProjectUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
