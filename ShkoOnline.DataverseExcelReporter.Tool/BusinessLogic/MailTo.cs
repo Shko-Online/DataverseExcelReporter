@@ -14,6 +14,8 @@
    limitations under the License.
  */
 
+using System.Diagnostics;
+
 namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
 {
     internal class MailTo
@@ -21,7 +23,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
         private const string EMAIL = "sales@shko.online";
         public static void PrepareSendEmail(string subject, string body)
         {
-            System.Diagnostics.Process.Start($"mailto:{EMAIL}?subject={EncodeForMailto(subject)}&body=Hi,%0Athanks%20for%20this%20amazing%20tool!%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20products%20and%20services.%0A%0ABest%20regards,%0A[Your%20Name]");
+            Process.Start($"mailto:{EMAIL}?subject={EncodeForMailto(subject)}&body={EncodeForMailto(body)}");
         }
 
         private static string EncodeForMailto(string input)

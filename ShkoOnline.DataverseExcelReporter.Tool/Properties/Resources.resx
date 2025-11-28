@@ -154,4 +154,22 @@ I am interested in learning more about your products and services.
 Best regards,
 [Your Name]</value>
   </data>
+  <data name="ExportedNRecords" xml:space="preserve">
+    <value>Exported {0} records</value>
+  </data>
+  <data name="GenerateError" xml:space="preserve">
+    <value>Error generating the report</value>
+  </data>
+  <data name="SaveGeneratedReport" xml:space="preserve">
+    <value>Save Generated Report</value>
+  </data>
+  <data name="SaveFilter" xml:space="preserve">
+    <value>Excel Files|*.xlsx|All Files|*.*</value>
+  </data>
+  <data name="ReportSaved" xml:space="preserve">
+    <value>Report saved successfully</value>
+  </data>
+  <data name="ErrorSaving" xml:space="preserve">
+    <value>Error saving the report file</value>
+  </data>
 </root>

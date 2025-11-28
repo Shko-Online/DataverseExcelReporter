@@ -115,6 +115,33 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error saving the report file.
+        /// </summary>
+        internal static string ErrorSaving {
+            get {
+                return ResourceManager.GetString("ErrorSaving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exported {0} records.
+        /// </summary>
+        internal static string ExportedNRecords {
+            get {
+                return ResourceManager.GetString("ExportedNRecords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error generating the report.
+        /// </summary>
+        internal static string GenerateError {
+            get {
+                return ResourceManager.GetString("GenerateError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generating Report.
         /// </summary>
         internal static string Generating_Report {
@@ -129,6 +156,33 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.Properties {
         internal static string Loading_Document_Templates {
             get {
                 return ResourceManager.GetString("Loading_Document_Templates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report saved successfully.
+        /// </summary>
+        internal static string ReportSaved {
+            get {
+                return ResourceManager.GetString("ReportSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excel Files|*.xlsx|All Files|*.*.
+        /// </summary>
+        internal static string SaveFilter {
+            get {
+                return ResourceManager.GetString("SaveFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Generated Report.
+        /// </summary>
+        internal static string SaveGeneratedReport {
+            get {
+                return ResourceManager.GetString("SaveGeneratedReport", resourceCulture);
             }
         }
         

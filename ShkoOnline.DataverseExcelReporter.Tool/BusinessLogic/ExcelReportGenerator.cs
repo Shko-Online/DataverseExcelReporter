@@ -84,7 +84,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
         /// <param name="progress"></param>
         private void ReportGenerating(int percentage, int progress)
         {
-            this.dataverseExcelReporterControl.UpdateStatusBarMessage($"Exported {progress} rows");
+            this.dataverseExcelReporterControl.UpdateStatusBarMessage(string.Format(Resources.ExportedNRecords, progress));
         }
 
         private FileInfo GenerateReportWorker(GenerateReportParameters parameters, Reporter<int> reporter)
@@ -209,7 +209,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
                                     sheetData.Append(row);
                                 }
                             }
-                            reporter.ReportProgress(0, (int)rowIndex-2);
+                            reporter.ReportProgress(0, (int)rowIndex - 2);
                             page++;
                         }
                         if (rowIndex == 2)
@@ -442,7 +442,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
         {
             if (exception != null)
             {
-                dataverseExcelReporterControl.ShowErrorDialog(exception, "Error generating the report.");
+                dataverseExcelReporterControl.ShowErrorDialog(exception, Resources.GenerateError);
                 viewModel.PendingOperationCTS = null;
                 return;
             }
@@ -450,8 +450,8 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog
                 {
-                    Title = "Save Generated Report",
-                    Filter = "Excel Files|*.xlsx|All Files|*.*",
+                    Title = Resources.SaveGeneratedReport,
+                    Filter = Resources.SaveFilter,
                     FileName = $"Report_{parameters.DocumentTemplate.Table.Name}_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx",
                     OverwritePrompt = true,
                     CheckPathExists = true,
@@ -463,7 +463,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
                     try
                     {
                         File.Copy(result.FullName, saveFileDialog.FileName, true);
-                        dataverseExcelReporterControl.UpdateStatusBarMessage("Report saved successfully.");
+                        dataverseExcelReporterControl.UpdateStatusBarMessage(Resources.ReportSaved);
                     }
                     catch (Exception ex)
                     {

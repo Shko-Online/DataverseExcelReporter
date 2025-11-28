@@ -1,4 +1,4 @@
 ﻿v1.0.0: 
  - First release of ShkoOnline.DataverseExcelReporter tool.
- - Multilingual support added (English, Italian, German, French).
+ - Multilingual support added (English & Italian).
  - Improved performance for large datasets.

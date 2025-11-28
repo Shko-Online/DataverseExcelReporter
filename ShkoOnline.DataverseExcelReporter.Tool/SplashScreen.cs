@@ -10,6 +10,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
 {
     public partial class SplashScreen : Form
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
         private readonly ToolViewModel viewModel = new ToolViewModel();
         private readonly AlBackgroundWorkHandler backgroundWorkHandler = new AlBackgroundWorkHandler();
         private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
@@ -17,6 +18,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
         public SplashScreen()
         {
             InitializeComponent();
+            ButtonStartUsingTool.Text = string.Format(this.resources.GetString("ButtonStartUsingTool.Text"), 9);
             this.LabelVersion.Text = $"v {typeof(SplashScreen).Assembly.GetName().Version}";
             backgroundWorkHandler.EnqueueBackgroundWork(
                 AlBackgroundWorkerFactory.NewAsyncWorker<bool, int>(CountToTen, SplashProgress, SplashShownFor10Seconds)
@@ -37,7 +39,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
 
         private void SplashProgress(int progress, int message)
         {
-            ButtonStartUsingTool.Text = $"Start Using Tool ({message}s)";
+            ButtonStartUsingTool.Text = string.Format(this.resources.GetString("ButtonStartUsingTool.Text"),message);
             if (progress == 3)
             {
                 ButtonStartUsingTool.Enabled = true;

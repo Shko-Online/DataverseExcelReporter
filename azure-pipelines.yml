@@ -1,0 +1,51 @@
+#   Copyright 2025 Shko Online LLC <sales@shko.online>
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: NuGetToolInstaller@1
+  displayName: Install NuGet Tool
+
+- script: echo Starting build pipeline!
+  displayName: 'Hello from Shko Online LLC'
+
+- task: NuGetCommand@2
+  displayName: Restore ShkoOnline.DataverseExcelReporter.sln 
+  inputs:
+    restoreSolution: 'ShkoOnline.DataverseExcelReporter.sln'
+
+- task: VSBuild@1
+  displayName: Build ShkoOnline.DataverseExcelReporter.sln
+  inputs:
+    solution: 'ShkoOnline.DataverseExcelReporter.sln'
+
+- pwsh: |
+    $nugetPackage =  get-item  ShkoOnline.DataverseExcelReporter/bin/Debug/ShkoOnline.DataverseExcelReporter.*.nupkg
+    $nugetPackage.Name.TrimStart("ShkoOnline.DataverseExcelReporter.").TrimEnd(".nupkg") | Out-File -FilePath $(Build.ArtifactStagingDirectory)\Version.txt
+    Rename-Item $nugetPackage ShkoOnline.DataverseExcelReporter.nupkg
+    Move-Item ShkoOnline.DataverseExcelReporter/bin/Debug/ShkoOnline.DataverseExcelReporter.nupkg -destination $(Build.ArtifactStagingDirectory)
+    Copy-Item ShkoOnline.DataverseExcelReporter/ReleaseNotes.txt -Destination $(Build.ArtifactStagingDirectory)\ReleaseNotes.txt
+  displayName: Move packages to Artifacts Staging Directory
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifact: 'ShkoOnline.DataverseExcelReporter'
+    publishLocation: 'pipeline'
+  displayName: Publish Artifacts

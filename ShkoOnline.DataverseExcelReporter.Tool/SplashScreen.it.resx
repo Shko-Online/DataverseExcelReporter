@@ -117,47 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="LabelVersion.Text" xml:space="preserve">
-    <value>v1.0.0</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LinkLabelContactUs.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>76, 17</value>
   </data>
-  <data name="&gt;&gt;ButtonStartUsingTool.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ButtonStartUsingTool.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+  <data name="LinkLabelContactUs.Text" xml:space="preserve">
+    <value>Ti piace questo strumento gratuito di Shko Online? Contattaci all'indirizzo sales@shko.online</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ButtonStartUsingTool.Size" type="System.Drawing.Size, System.Drawing">
-    <value>387, 78</value>
+  <data name="ButtonStartUsingTool.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 671</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ButtonStartUsingTool.Size" type="System.Drawing.Size, System.Drawing">
+    <value>513, 78</value>
   </data>
   <data name="ButtonStartUsingTool.Text" xml:space="preserve">
-    <value>Start Using Tool (9s)</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="LabelToolTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 24pt</value>
-  </data>
-  <data name="LinkLabelContactUs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="LinkLabelContactUs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>738, 351</value>
+    <value>Inizia a lavorare ({0}s)</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -858,208 +833,4 @@
         ///wAAAA////////////////8AAAAA==
 </value>
   </data>
-  <data name="&gt;&gt;LabelVersion.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LabelVersion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="LabelVersion.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;LabelToolTitle.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 5</value>
-  </data>
-  <data name="&gt;&gt;LabelToolTitle.Name" xml:space="preserve">
-    <value>LabelToolTitle</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;LinkLabelContactUs.Name" xml:space="preserve">
-    <value>LinkLabelContactUs</value>
-  </data>
-  <data name="LabelVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="LabelToolTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="LinkLabelContactUs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelToolTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 237</value>
-  </data>
-  <data name="LabelVersion.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LinkLabelContactUs.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 16pt</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;LabelToolTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LinkLabelContactUs.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="LinkLabelContactUs.Text" xml:space="preserve">
-    <value>Enjoying this free tool from Shko Online? Contact us at sales@shko.online</value>
-  </data>
-  <data name="ButtonStartUsingTool.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="LabelToolTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="LinkLabelContactUs.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;LabelVersion.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>SplashScreen</value>
-  </data>
-  <data name="LinkLabelContactUs.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;LinkLabelContactUs.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LabelToolTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ButtonStartUsingTool.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 671</value>
-  </data>
-  <data name="&gt;&gt;LabelVersion.Name" xml:space="preserve">
-    <value>LabelVersion</value>
-  </data>
-  <data name="LinkLabelContactUs.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;ButtonStartUsingTool.Name" xml:space="preserve">
-    <value>ButtonStartUsingTool</value>
-  </data>
-  <data name="LabelToolTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 78</value>
-  </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="LinkLabelContactUs.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>56, 73</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>744, 754</value>
-  </data>
-  <data name="LinkLabelContactUs.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 20</value>
-  </data>
-  <data name="LabelVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 666</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ButtonStartUsingTool.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 16pt</value>
-  </data>
-  <data name="LabelVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 88</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="LinkLabelContactUs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 315</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>744, 754</value>
-  </data>
-  <data name="ButtonStartUsingTool.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="LabelToolTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="&gt;&gt;LinkLabelContactUs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SplashScreen</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="ButtonStartUsingTool.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LabelVersion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="LabelToolTitle.Text" xml:space="preserve">
-    <value>Dataverse Excel Reporter</value>
-  </data>
-  <data name="&gt;&gt;ButtonStartUsingTool.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="LabelToolTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LabelToolTitle.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;ButtonStartUsingTool.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="ButtonStartUsingTool.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 227</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LabelVersion" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LinkLabelContactUs" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="panel1" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="LabelToolTitle" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="ButtonStartUsingTool" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,30,Percent,70" /&gt;&lt;Rows Styles="Absolute,237,Absolute,78,Absolute,351,Absolute,78,Absolute,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

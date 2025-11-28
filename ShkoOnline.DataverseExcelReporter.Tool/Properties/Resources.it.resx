@@ -123,4 +123,34 @@
   <data name="Generating_Report" xml:space="preserve">
     <value>Generazione del report</value>
   </data>
+  <data name="EMAIL_SUBJECT" xml:space="preserve">
+    <value>Grazie per Dataverse Excel Reporter</value>
+  </data>
+  <data name="EMAIL_BODY" xml:space="preserve">
+    <value>Ciao,
+grazie per questo straordinario strumento!
+
+Sono interessato a saperne di più sui vostri prodotti e servizi.
+
+Cordiali saluti,
+[Il tuo nome]</value>
+  </data>
+  <data name="ExportedNRecords" xml:space="preserve">
+    <value>{0} righe esportate</value>
+  </data>
+  <data name="GenerateError" xml:space="preserve">
+    <value>Errore nella generazione del report</value>
+  </data>
+  <data name="SaveGeneratedReport" xml:space="preserve">
+    <value>Salva Report Generato</value>
+  </data>
+  <data name="SaveFilter" xml:space="preserve">
+    <value>File Excel|*.xlsx|Tutti i File|*.*</value>
+  </data>
+  <data name="ReportSaved" xml:space="preserve">
+    <value>Report salvato con successo</value>
+  </data>
+  <data name="ErrorSaving" xml:space="preserve">
+    <value>Errore durante il salvataggio del file del report</value>
+  </data>
 </root>
