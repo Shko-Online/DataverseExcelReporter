@@ -173,5 +173,33 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
                 viewModel.PendingOperationCTS = null;
             }
         }
+
+        private void DataverseExcelReporterControl_ConnectionUpdated(object sender, ConnectionUpdatedEventArgs e)
+        {
+            if(viewModel.PendingOperationCTS!= null)    
+            {
+                viewModel.PendingOperationCTS.Cancel();
+                viewModel.PendingOperationCTS = null;
+            }
+        }
+
+        private void DataverseExcelReporterControl_OnCloseTool(object sender, EventArgs e)
+        {
+            if (viewModel.PendingOperationCTS != null)
+            {
+                viewModel.PendingOperationCTS.Cancel();
+                viewModel.PendingOperationCTS = null;
+            }
+        }
+
+        public override void ClosingPlugin(PluginCloseInfo info)
+        {
+            base.ClosingPlugin(info);
+            if (viewModel.PendingOperationCTS != null)
+            {
+                viewModel.PendingOperationCTS.Cancel();
+                viewModel.PendingOperationCTS = null;
+            }
+        }
     }
 }

@@ -417,42 +417,6 @@
   <data name="ToolStripCommands.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 16pt</value>
   </data>
-  <data name="ButtonCancelReportGeneration.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ButtonCancelReportGeneration.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ButtonCancelReportGeneration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>422, 36</value>
-  </data>
-  <data name="ButtonCancelReportGeneration.Text" xml:space="preserve">
-    <value>Cancel Report Generation</value>
-  </data>
-  <data name="ButtonCancelReportGeneration.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ButtonGenerateReport.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ButtonGenerateReport.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ButtonGenerateReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 36</value>
-  </data>
-  <data name="ButtonGenerateReport.Text" xml:space="preserve">
-    <value>Generate Report</value>
-  </data>
-  <data name="ButtonRefreshMetadata.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Control</value>
-  </data>
-  <data name="ButtonRefreshMetadata.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 36</value>
-  </data>
-  <data name="ButtonRefreshMetadata.Text" xml:space="preserve">
-    <value>Refresh Metadata</value>
-  </data>
   <data name="ToolStripCommands.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 1</value>
   </data>
@@ -506,6 +470,42 @@
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ComboBoxView" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LabelView" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ComboBoxDocument" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LabelTemplate" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ComboBoxTable" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LabelTable" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelLogo" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LinkLabelContactUs" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="ToolStripCommands" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,30,Percent,70" /&gt;&lt;Rows Styles="Absolute,41,Absolute,51,Absolute,51,Absolute,51,AutoSize,0,Absolute,51,Absolute,20,Absolute,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="ButtonCancelReportGeneration.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ButtonCancelReportGeneration.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ButtonCancelReportGeneration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>422, 36</value>
+  </data>
+  <data name="ButtonCancelReportGeneration.Text" xml:space="preserve">
+    <value>Cancel Report Generation</value>
+  </data>
+  <data name="ButtonCancelReportGeneration.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ButtonGenerateReport.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ButtonGenerateReport.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ButtonGenerateReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 36</value>
+  </data>
+  <data name="ButtonGenerateReport.Text" xml:space="preserve">
+    <value>Generate Report</value>
+  </data>
+  <data name="ButtonRefreshMetadata.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Control</value>
+  </data>
+  <data name="ButtonRefreshMetadata.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 36</value>
+  </data>
+  <data name="ButtonRefreshMetadata.Text" xml:space="preserve">
+    <value>Refresh Metadata</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

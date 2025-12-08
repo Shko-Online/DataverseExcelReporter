@@ -1,4 +1,2 @@
-﻿v1.0.0: 
- - First release of ShkoOnline.DataverseExcelReporter tool.
- - Multilingual support added (English & Italian).
- - Improved performance for large datasets.
+﻿v1.0.1: 
+ - Fixed a situation where the export would keep running even after the tool was closed, but XrmToolBox was still open.

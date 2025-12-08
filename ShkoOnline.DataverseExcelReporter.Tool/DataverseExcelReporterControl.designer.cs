@@ -155,6 +155,8 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
             this.Name = "DataverseExcelReporterControl";
             this.PluginIcon = ((System.Drawing.Icon)(resources.GetObject("$this.PluginIcon")));
             this.TabIcon = global::ShkoOnline.DataverseExcelReporter.Tool.Properties.Resources.ShkoOnlineIcon;
+            this.OnCloseTool += new System.EventHandler(this.DataverseExcelReporterControl_OnCloseTool);
+            this.ConnectionUpdated += new XrmToolBox.Extensibility.PluginControlBase.ConnectionUpdatedHandler(this.DataverseExcelReporterControl_ConnectionUpdated);
             this.Load += new System.EventHandler(this.DataverseExcelReporterControl_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

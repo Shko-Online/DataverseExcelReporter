@@ -18,7 +18,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
         public SplashScreen()
         {
             InitializeComponent();
-            ButtonStartUsingTool.Text = string.Format(this.resources.GetString("ButtonStartUsingTool.Text"), 9);
+            ButtonStartUsingTool.Text = string.Format(this.resources.GetString("ButtonStartUsingTool.Text"), 10);
             this.LabelVersion.Text = $"v {typeof(SplashScreen).Assembly.GetName().Version}";
             backgroundWorkHandler.EnqueueBackgroundWork(
                 AlBackgroundWorkerFactory.NewAsyncWorker<bool, int>(CountToTen, SplashProgress, SplashShownFor10Seconds)
