@@ -37,6 +37,9 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
             this.ButtonCancelReportGeneration = new System.Windows.Forms.ToolStripButton();
             this.ButtonGenerateReport = new System.Windows.Forms.ToolStripButton();
             this.ButtonRefreshMetadata = new System.Windows.Forms.ToolStripButton();
+            this.StripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.LabelPageSize = new System.Windows.Forms.ToolStripLabel();
+            this.TextPageSize = new System.Windows.Forms.ToolStripTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.ToolStripCommands.SuspendLayout();
             this.SuspendLayout();
@@ -122,7 +125,10 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
             this.ToolStripCommands.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ButtonCancelReportGeneration,
             this.ButtonGenerateReport,
-            this.ButtonRefreshMetadata});
+            this.ButtonRefreshMetadata,
+            this.StripSeparator,
+            this.LabelPageSize,
+            this.TextPageSize});
             this.ToolStripCommands.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.ToolStripCommands.Name = "ToolStripCommands";
             this.ToolStripCommands.Stretch = true;
@@ -147,6 +153,22 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
             resources.ApplyResources(this.ButtonRefreshMetadata, "ButtonRefreshMetadata");
             this.ButtonRefreshMetadata.Name = "ButtonRefreshMetadata";
             this.ButtonRefreshMetadata.Click += new System.EventHandler(this.ButtonRefreshMetadata_Click);
+            // 
+            // StripSeparator
+            // 
+            this.StripSeparator.Name = "StripSeparator";
+            resources.ApplyResources(this.StripSeparator, "StripSeparator");
+            // 
+            // LabelPageSize
+            // 
+            this.LabelPageSize.Name = "LabelPageSize";
+            resources.ApplyResources(this.LabelPageSize, "LabelPageSize");
+            // 
+            // TextPageSize
+            // 
+            resources.ApplyResources(this.TextPageSize, "TextPageSize");
+            this.TextPageSize.Name = "TextPageSize";
+            this.TextPageSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextPageSize_KeyPress);
             // 
             // DataverseExcelReporterControl
             // 
@@ -179,5 +201,8 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
         private System.Windows.Forms.ToolStripButton ButtonGenerateReport;
         private System.Windows.Forms.ToolStripButton ButtonCancelReportGeneration;
         private DataverseTableFilteringCombobox ComboBoxTable;
+        private System.Windows.Forms.ToolStripSeparator StripSeparator;
+        private System.Windows.Forms.ToolStripLabel LabelPageSize;
+        private System.Windows.Forms.ToolStripTextBox TextPageSize;
     }
 }

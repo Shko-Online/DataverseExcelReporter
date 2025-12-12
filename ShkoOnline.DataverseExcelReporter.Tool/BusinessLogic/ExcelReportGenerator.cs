@@ -17,7 +17,6 @@
 using AlbanianXrm.BackgroundWorker;
 using AlbanianXrm.XrmToolBox.Shared.Extensions;
 using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.Xrm.Sdk;
@@ -32,17 +31,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
-using System.ServiceModel.Configuration;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Web;
-using System.Web.Services.Description;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Xml.XPath;
-using XrmToolBox.Extensibility.Args;
 
 namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
 {
@@ -58,7 +52,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
             this.viewModel = viewModel;
         }
 
-        public void GenerateReport(IOrganizationService service)
+        public void GenerateReport(IOrganizationService service, int pageSize)
         {
             viewModel.PendingOperationCTS = new CancellationTokenSource();
             backgroundWorkHandler.EnqueueBackgroundWork(
@@ -67,6 +61,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
                                         Service = service,
                                         DocumentTemplate = viewModel.SelectedDocumentTemplate,
                                         TableView = viewModel.SelectedTableView,
+                                        PageSize = pageSize,
                                         CTS = viewModel.PendingOperationCTS
                                     }, ReportGenerating, ReportGenerated)
                                  .WithViewModel(viewModel)
@@ -101,6 +96,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
 
             var query = XDocument.Parse(parameters.TableView.FetchXml);
             query.XPathSelectElements("/fetch/entity/attribute").Remove(); //remove existing attributes
+            query.Root.SetAttributeValue("count", parameters.PageSize);
             var entityElement = query.XPathSelectElement("/fetch/entity");
             var table = entityElement.Attribute("name").Value;
             var relationshipMetadata = GetRelationshipMetadataForRelatedColumns(table, viewColumns, parameters.Service);
@@ -160,6 +156,10 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
                             {
                                 foreach (var column in viewColumns.Columns)
                                 {
+                                    if (column.Value.LogicalName == null)
+                                    {
+                                        continue;
+                                    }
                                     var cellReference = $"{GetColumnLetter((uint)column.Value.ColumnIndex + columnOffset)}{rowIndex}";
                                     var cell = row.Elements<Cell>().FirstOrDefault(c => c.CellReference == cellReference);
                                     if (cell == null && !row.Elements<Cell>().Any())
@@ -251,7 +251,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
                 LogicalName = table
             });
             var metadata = retrieveMetadataResponse.EntityMetadata;
-            foreach (var relatedEntity in viewColumns.Columns.Values.Where(x => x.LogicalName.Contains(".")).Select(x => x.LogicalName.Split('.')[0]).Distinct())
+            foreach (var relatedEntity in viewColumns.Columns.Values.Where(x => x.LogicalName?.Contains(".") == true).Select(x => x.LogicalName.Split('.')[0]).Distinct())
             {
                 result.Add(relatedEntity, null);
             }
@@ -280,7 +280,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
             var result = new Dictionary<string, string>();
             foreach (var column in viewColumns.Columns)
             {
-                if (column.Value.LogicalName == "checksumLogicalName")
+                if (column.Value.LogicalName == "checksumLogicalName" || column.Value.LogicalName == null)
                 {                     // Skip related columns for now
                     continue;
                 }

@@ -68,7 +68,6 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
                     ButtonGenerateReport.Enabled = viewModel.GenerateReport_Enabled;
                     break;
                 case nameof(viewModel.PendingOperationCTS):
-               
                     ButtonCancelReportGeneration.Enabled = viewModel.PendingOperationCTS != null;
                     ButtonCancelReportGeneration.Visible = viewModel.PendingOperationCTS != null;
                     break;
@@ -103,6 +102,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
                 case nameof(viewModel.AllowRequests):
                     ComboBoxTable.Enabled = viewModel.AllowRequests;
                     ButtonRefreshMetadata.Enabled = viewModel.AllowRequests;
+                    TextPageSize.Enabled = viewModel.AllowRequests;
                     ComboBoxDocument.Enabled = viewModel.SelectedTable != null && viewModel.AllowRequests;
                     ComboBoxView.Enabled = viewModel.SelectedTable != null && viewModel.AllowRequests;
                     break;
@@ -162,7 +162,12 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
 
         private void ButtonGenerateReport_Click(object sender, EventArgs e)
         {
-            excelReportGenerator.GenerateReport(Service);
+            int.TryParse(TextPageSize.Text, out int pageSize);
+            if (pageSize < 1 || pageSize > 5000)
+            {
+                pageSize = 100;
+            }
+            excelReportGenerator.GenerateReport(Service, pageSize);
         }
 
         private void ButtonCancelReportGeneration_Click(object sender, EventArgs e)
@@ -176,7 +181,7 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
 
         private void DataverseExcelReporterControl_ConnectionUpdated(object sender, ConnectionUpdatedEventArgs e)
         {
-            if(viewModel.PendingOperationCTS!= null)    
+            if (viewModel.PendingOperationCTS != null)
             {
                 viewModel.PendingOperationCTS.Cancel();
                 viewModel.PendingOperationCTS = null;
@@ -199,6 +204,51 @@ namespace ShkoOnline.DataverseExcelReporter.Tool
             {
                 viewModel.PendingOperationCTS.Cancel();
                 viewModel.PendingOperationCTS = null;
+            }
+        }
+
+        private void TextPageSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != 43/* + */ && e.KeyChar != 45 /* - */)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == 43/* + */)
+            {
+                int.TryParse(TextPageSize.Text, out int upNumber);
+                if (upNumber < 5000)
+                {
+                    upNumber++;
+                }
+                TextPageSize.Text = upNumber.ToString();
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == 45 /* - */)
+            {
+                int.TryParse(TextPageSize.Text, out int downNumber);
+                if (downNumber > 1)
+                {
+                    downNumber--;
+                }
+                else
+                {
+                    downNumber = 1;
+                }
+                TextPageSize.Text = downNumber.ToString();
+                e.Handled = true;
+                return;
+            }
+
+            var key = "" + e.KeyChar;
+            var text = TextPageSize.Text.Substring(0, TextPageSize.SelectionStart) + key + TextPageSize.Text.Substring(TextPageSize.SelectionStart + TextPageSize.SelectionLength, TextPageSize.Text.Length - (TextPageSize.SelectionStart + TextPageSize.SelectionLength));
+            if (!int.TryParse(text, out int number) || number < 1 || number > 5000)
+            {
+                e.Handled = true;
+                return;
             }
         }
     }

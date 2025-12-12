@@ -26,6 +26,9 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.DataModel
         public DocumentTemplate DocumentTemplate { get; set; }
 
         public TableView TableView { get; set; }
+
+        public int PageSize { get; set; }
+
         public CancellationTokenSource CTS { get; set; }
     }
 }

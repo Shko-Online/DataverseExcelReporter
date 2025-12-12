@@ -145,7 +145,7 @@
     <value>3, 9, 3, 3</value>
   </data>
   <data name="ComboBoxView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>811, 45</value>
+    <value>811, 33</value>
   </data>
   <data name="ComboBoxView.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -154,7 +154,7 @@
     <value>ComboBoxView</value>
   </data>
   <data name="&gt;&gt;ComboBoxView.Type" xml:space="preserve">
-    <value>ShkoOnline.DataverseExcelReporter.Tool.CustomControls.TableViewFilteringCombobox, ShkoOnline.DataverseExcelReporter.Tool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShkoOnline.DataverseExcelReporter.Tool.CustomControls.TableViewFilteringCombobox, ShkoOnline.DataverseExcelReporter.Tool, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ComboBoxView.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -175,10 +175,10 @@
     <value>NoControl</value>
   </data>
   <data name="LabelView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 199</value>
+    <value>287, 199</value>
   </data>
   <data name="LabelView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 57</value>
+    <value>60, 45</value>
   </data>
   <data name="LabelView.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -214,7 +214,7 @@
     <value>3, 9, 3, 3</value>
   </data>
   <data name="ComboBoxDocument.Size" type="System.Drawing.Size, System.Drawing">
-    <value>811, 45</value>
+    <value>811, 33</value>
   </data>
   <data name="ComboBoxDocument.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -223,7 +223,7 @@
     <value>ComboBoxDocument</value>
   </data>
   <data name="&gt;&gt;ComboBoxDocument.Type" xml:space="preserve">
-    <value>ShkoOnline.DataverseExcelReporter.Tool.CustomControls.DocumentTemplateFilteringCombobox, ShkoOnline.DataverseExcelReporter.Tool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShkoOnline.DataverseExcelReporter.Tool.CustomControls.DocumentTemplateFilteringCombobox, ShkoOnline.DataverseExcelReporter.Tool, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ComboBoxDocument.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -244,10 +244,10 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTemplate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 147</value>
+    <value>139, 147</value>
   </data>
   <data name="LabelTemplate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 51</value>
+    <value>208, 51</value>
   </data>
   <data name="LabelTemplate.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -283,7 +283,7 @@
     <value>3, 9, 3, 3</value>
   </data>
   <data name="ComboBoxTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>811, 45</value>
+    <value>811, 33</value>
   </data>
   <data name="ComboBoxTable.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -292,7 +292,7 @@
     <value>ComboBoxTable</value>
   </data>
   <data name="&gt;&gt;ComboBoxTable.Type" xml:space="preserve">
-    <value>ShkoOnline.DataverseExcelReporter.Tool.CustomControls.DataverseTableFilteringCombobox, ShkoOnline.DataverseExcelReporter.Tool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShkoOnline.DataverseExcelReporter.Tool.CustomControls.DataverseTableFilteringCombobox, ShkoOnline.DataverseExcelReporter.Tool, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ComboBoxTable.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -313,13 +313,13 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 98</value>
+    <value>282, 98</value>
   </data>
   <data name="LabelTable.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="LabelTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 45</value>
+    <value>65, 45</value>
   </data>
   <data name="LabelTable.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -388,7 +388,7 @@
     <value>354, 43</value>
   </data>
   <data name="LinkLabelContactUs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>811, 51</value>
+    <value>731, 51</value>
   </data>
   <data name="LinkLabelContactUs.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -417,11 +417,65 @@
   <data name="ToolStripCommands.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 16pt</value>
   </data>
+  <data name="ButtonCancelReportGeneration.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ButtonCancelReportGeneration.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ButtonCancelReportGeneration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 35</value>
+  </data>
+  <data name="ButtonCancelReportGeneration.Text" xml:space="preserve">
+    <value>Cancel Report Generation</value>
+  </data>
+  <data name="ButtonCancelReportGeneration.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ButtonGenerateReport.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ButtonGenerateReport.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ButtonGenerateReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 35</value>
+  </data>
+  <data name="ButtonGenerateReport.Text" xml:space="preserve">
+    <value>Generate Report</value>
+  </data>
+  <data name="ButtonRefreshMetadata.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Control</value>
+  </data>
+  <data name="ButtonRefreshMetadata.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 35</value>
+  </data>
+  <data name="ButtonRefreshMetadata.Text" xml:space="preserve">
+    <value>Refresh Metadata</value>
+  </data>
+  <data name="StripSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 38</value>
+  </data>
+  <data name="LabelPageSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 35</value>
+  </data>
+  <data name="LabelPageSize.Text" xml:space="preserve">
+    <value>Page Size</value>
+  </data>
+  <data name="TextPageSize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16pt</value>
+  </data>
+  <data name="TextPageSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 38</value>
+  </data>
+  <data name="TextPageSize.Text" xml:space="preserve">
+    <value>100</value>
+  </data>
   <data name="ToolStripCommands.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 1</value>
   </data>
   <data name="ToolStripCommands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1167, 41</value>
+    <value>1167, 38</value>
   </data>
   <data name="ToolStripCommands.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -470,42 +524,6 @@
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ComboBoxView" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LabelView" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ComboBoxDocument" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LabelTemplate" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ComboBoxTable" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LabelTable" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelLogo" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LinkLabelContactUs" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="ToolStripCommands" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,30,Percent,70" /&gt;&lt;Rows Styles="Absolute,41,Absolute,51,Absolute,51,Absolute,51,AutoSize,0,Absolute,51,Absolute,20,Absolute,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="ButtonCancelReportGeneration.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ButtonCancelReportGeneration.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ButtonCancelReportGeneration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>422, 36</value>
-  </data>
-  <data name="ButtonCancelReportGeneration.Text" xml:space="preserve">
-    <value>Cancel Report Generation</value>
-  </data>
-  <data name="ButtonCancelReportGeneration.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ButtonGenerateReport.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ButtonGenerateReport.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ButtonGenerateReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 36</value>
-  </data>
-  <data name="ButtonGenerateReport.Text" xml:space="preserve">
-    <value>Generate Report</value>
-  </data>
-  <data name="ButtonRefreshMetadata.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Control</value>
-  </data>
-  <data name="ButtonRefreshMetadata.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 36</value>
-  </data>
-  <data name="ButtonRefreshMetadata.Text" xml:space="preserve">
-    <value>Refresh Metadata</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1232,6 +1250,24 @@
   </data>
   <data name="&gt;&gt;ButtonRefreshMetadata.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StripSeparator.Name" xml:space="preserve">
+    <value>StripSeparator</value>
+  </data>
+  <data name="&gt;&gt;StripSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelPageSize.Name" xml:space="preserve">
+    <value>LabelPageSize</value>
+  </data>
+  <data name="&gt;&gt;LabelPageSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextPageSize.Name" xml:space="preserve">
+    <value>TextPageSize</value>
+  </data>
+  <data name="&gt;&gt;TextPageSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>DataverseExcelReporterControl</value>
