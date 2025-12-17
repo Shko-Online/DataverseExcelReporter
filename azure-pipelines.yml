@@ -19,7 +19,7 @@ pool:
   name: 'Shko Online'
 
 stages:
- - stage: Build
+- stage: Build
   displayName: Build Stage
   jobs:
   - job: Build
