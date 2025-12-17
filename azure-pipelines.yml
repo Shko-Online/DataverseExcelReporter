@@ -16,36 +16,42 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  name: 'Shko Online'
 
-steps:
-- task: NuGetToolInstaller@1
-  displayName: Install NuGet Tool
+stages:
+ - stage: Build
+  displayName: Build Stage
+  jobs:
+  - job: Build
+    displayName: Build Job
+    steps:
+    - task: NuGetToolInstaller@1
+      displayName: Install NuGet Tool
 
-- script: echo Starting build pipeline!
-  displayName: 'Hello from Shko Online LLC'
+    - script: echo Starting build pipeline!
+      displayName: 'Hello from Shko Online LLC'
 
-- task: NuGetCommand@2
-  displayName: Restore ShkoOnline.DataverseExcelReporter.sln 
-  inputs:
-    restoreSolution: 'ShkoOnline.DataverseExcelReporter.sln'
+    - task: NuGetCommand@2
+      displayName: Restore ShkoOnline.DataverseExcelReporter.sln 
+      inputs:
+        restoreSolution: 'ShkoOnline.DataverseExcelReporter.sln'
 
-- task: VSBuild@1
-  displayName: Build ShkoOnline.DataverseExcelReporter.sln
-  inputs:
-    solution: 'ShkoOnline.DataverseExcelReporter.sln'
+    - task: VSBuild@1
+      displayName: Build ShkoOnline.DataverseExcelReporter.sln
+      inputs:
+        solution: 'ShkoOnline.DataverseExcelReporter.sln'
 
-- pwsh: |
-    $nugetPackage =  get-item  ShkoOnline.DataverseExcelReporter/bin/Debug/ShkoOnline.DataverseExcelReporter.*.nupkg
-    $nugetPackage.Name.TrimStart("ShkoOnline.DataverseExcelReporter.").TrimEnd(".nupkg") | Out-File -FilePath $(Build.ArtifactStagingDirectory)\Version.txt
-    Rename-Item $nugetPackage ShkoOnline.DataverseExcelReporter.nupkg
-    Move-Item ShkoOnline.DataverseExcelReporter/bin/Debug/ShkoOnline.DataverseExcelReporter.nupkg -destination $(Build.ArtifactStagingDirectory)
-    Copy-Item ShkoOnline.DataverseExcelReporter/ReleaseNotes.txt -Destination $(Build.ArtifactStagingDirectory)\ReleaseNotes.txt
-  displayName: Move packages to Artifacts Staging Directory
+    - pwsh: |
+        $nugetPackage =  get-item  ShkoOnline.DataverseExcelReporter/bin/Debug/ShkoOnline.DataverseExcelReporter.*.nupkg
+        $nugetPackage.Name.TrimStart("ShkoOnline.DataverseExcelReporter.").TrimEnd(".nupkg") | Out-File -FilePath $(Build.ArtifactStagingDirectory)\Version.txt
+        Rename-Item $nugetPackage ShkoOnline.DataverseExcelReporter.nupkg
+        Move-Item ShkoOnline.DataverseExcelReporter/bin/Debug/ShkoOnline.DataverseExcelReporter.nupkg -destination $(Build.ArtifactStagingDirectory)
+        Copy-Item ShkoOnline.DataverseExcelReporter/ReleaseNotes.txt -Destination $(Build.ArtifactStagingDirectory)\ReleaseNotes.txt
+      displayName: Move packages to Artifacts Staging Directory
 
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Build.ArtifactStagingDirectory)'
-    artifact: 'ShkoOnline.DataverseExcelReporter'
-    publishLocation: 'pipeline'
-  displayName: Publish Artifacts
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)'
+        artifact: 'ShkoOnline.DataverseExcelReporter'
+        publishLocation: 'pipeline'
+      displayName: Publish Artifacts

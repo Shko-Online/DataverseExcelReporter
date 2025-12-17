@@ -11,6 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeXrmToolBoxPackage", "Xr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6412BAA0-1CC9-4091-832F-5B2A6CFDB40A}"
 	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
 		ShkoOnline.DataverseExcelReporter.Version.props = ShkoOnline.DataverseExcelReporter.Version.props
 	EndProjectSection
 EndProject
