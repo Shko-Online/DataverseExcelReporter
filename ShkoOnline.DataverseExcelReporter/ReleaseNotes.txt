@@ -1,2 +1,2 @@
-﻿v1.0.3: 
- - Updated package metadata and license information.
+﻿v1.0.4: 
+ - Updated to PackageIconUrl from PackageIcon because XrmToolBox doesn't support it.

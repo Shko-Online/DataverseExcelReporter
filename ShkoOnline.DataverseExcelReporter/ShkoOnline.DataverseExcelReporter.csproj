@@ -25,7 +25,7 @@
 	<PropertyGroup>
 		<Description>Dataverse Excel Reporter is an XrmToolBox plugin that allows users to generate Excel reports from Dataverse data with ease, providing a user-friendly interface and powerful reporting capabilities.</Description>
 		<PackageTags>XrmToolBox Excel dataverse PowerPlatform</PackageTags>
-		<PackageIcon>Logo.png</PackageIcon>
+		<PackageIconUrl>https://github.com/Shko-Online/DataverseExcelReporter/blob/main/ShkoOnline.DataverseExcelReporter/Resources/Logo.png</PackageIconUrl>
 		<RepositoryUrl>https://github.com/Shko-Online/DataverseExcelReporter.git</RepositoryUrl>
 		<PackageProjectUrl>https://shko.online/DataverseExcelReporter</PackageProjectUrl>
 		<RepositoryType>git</RepositoryType>
@@ -36,8 +36,6 @@
 
 	<ItemGroup>
 		<Content Include="Shko-Online-Icon.ico" Pack="false" />
-		<None Remove="Resources\Logo.png" />
-		<Content Include="Resources\Logo.png" Pack="true" PackagePath="\" />	
 		<None Include="..\README.md" Pack="true" PackagePath="\" />
 		<None Update="Resources\ShkoOnline32x32.png">
 			<Namespace>ShkoOnline.DataverseExcelReporter</Namespace>
