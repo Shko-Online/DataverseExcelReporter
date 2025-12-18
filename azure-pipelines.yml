@@ -57,8 +57,8 @@ stages:
         artifact: 'ShkoOnline.DataverseExcelReporter'
         publishLocation: 'pipeline'
       displayName: Publish Artifacts
-- stage: Publish
-  displayName: Publish
+- stage: Publish_GitHub
+  displayName: Publish GitHub
   dependsOn: Build
   variables: 
     PackageVersion: $[ stageDependencies.Build.Build.outputs['StageArtifacts.PackageVersion']]
@@ -86,7 +86,13 @@ stages:
                 assets: '$(Pipeline.Workspace)\ShkoOnline.DataverseExcelReporter\ShkoOnline.DataverseExcelReporter.nupkg'
                 isDraft: true
                 addChangeLog: false
-
+- stage: Publish_NuGet
+  displayName: Publish NuGet
+  dependsOn: Build
+  variables: 
+    PackageVersion: $[ stageDependencies.Build.Build.outputs['StageArtifacts.PackageVersion']]
+    ReleaseNotes: $[ stageDependencies.Build.Build.outputs['StageArtifacts.ReleaseNotes']]
+  jobs:
     - deployment: Publish_NuGet
       displayName: Publish to NuGet
       environment: Production
@@ -102,4 +108,5 @@ stages:
                 nuGetFeedType: external
                 publishFeedCredentials: 'Shko-Online-Nuget'
 
+    
     
