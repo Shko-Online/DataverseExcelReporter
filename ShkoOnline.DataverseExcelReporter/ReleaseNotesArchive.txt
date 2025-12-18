@@ -1,4 +1,8 @@
-﻿v1.0.1: 
+﻿v1.0.2: 
+ - Fixed some issues with column definitions not containing a Logical Name.
+ - Added Page Size setting to control the number of records retrieved per request.
+
+v1.0.1: 
  - Fixed a situation where the export would keep running even after the tool was closed, but XrmToolBox was still open.
 
 v1.0.0: 

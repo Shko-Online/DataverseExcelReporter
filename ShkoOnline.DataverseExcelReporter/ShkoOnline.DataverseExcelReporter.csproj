@@ -29,7 +29,7 @@
 		<RepositoryUrl>https://github.com/Shko-Online/DataverseExcelReporter.git</RepositoryUrl>
 		<PackageProjectUrl>https://shko.online/DataverseExcelReporter</PackageProjectUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
@@ -37,8 +37,7 @@
 	<ItemGroup>
 		<Content Include="Shko-Online-Icon.ico" Pack="false" />
 		<None Remove="Resources\Logo.png" />
-		<Content Include="Resources\Logo.png" Pack="true" PackagePath="\" />
-		<None Include="..\LICENSE" Pack="true" PackagePath="\" />
+		<Content Include="Resources\Logo.png" Pack="true" PackagePath="\" />	
 		<None Include="..\README.md" Pack="true" PackagePath="\" />
 		<None Update="Resources\ShkoOnline32x32.png">
 			<Namespace>ShkoOnline.DataverseExcelReporter</Namespace>
