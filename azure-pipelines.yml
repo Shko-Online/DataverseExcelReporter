@@ -64,8 +64,8 @@ stages:
     PackageVersion: $[ stageDependencies.Build.Build.outputs['StageArtifacts.PackageVersion']]
     ReleaseNotes: $[ stageDependencies.Build.Build.outputs['StageArtifacts.ReleaseNotes']]
   jobs:
-    - deployment: Publish_NuGet
-      displayName: Publish to NuGet
+    - deployment: Publish_GitHub
+      displayName: Publish to GitHub
       environment: Production
       strategy:
         runOnce:
@@ -86,3 +86,20 @@ stages:
                 assets: '$(Pipeline.Workspace)\ShkoOnline.DataverseExcelReporter\ShkoOnline.DataverseExcelReporter.nupkg'
                 isDraft: true
                 addChangeLog: false
+
+    - deployment: Publish_NuGet
+      displayName: Publish to NuGet
+      environment: Production
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: NuGetCommand@2
+              displayName: 'NuGet push'
+              inputs:
+                command: push
+                packagesToPush: '$(Pipeline.Workspace)\ShkoOnline.DataverseExcelReporter\ShkoOnline.DataverseExcelReporter.nupkg'
+                nuGetFeedType: external
+                publishFeedCredentials: 'Shko-Online-Nuget'
+
+    
