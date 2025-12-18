@@ -40,13 +40,15 @@ stages:
       displayName: Build ShkoOnline.DataverseExcelReporter.sln
       inputs:
         solution: 'ShkoOnline.DataverseExcelReporter.sln'
+        configuration: 'Release'
 
     - pwsh: |
-        $nugetPackage =  get-item  ShkoOnline.DataverseExcelReporter/bin/Debug/ShkoOnline.DataverseExcelReporter.*.nupkg
-        $nugetPackage.Name.TrimStart("ShkoOnline.DataverseExcelReporter.").TrimEnd(".nupkg") | Out-File -FilePath $(Build.ArtifactStagingDirectory)\Version.txt
+        $nugetPackage = Get-Item ShkoOnline.DataverseExcelReporter/bin/Release/ShkoOnline.DataverseExcelReporter.*.nupkg
+        Write-Host "###vso[task.setvariable variable=PackageVersion;isOutput=true]$($nugetPackage.Name.TrimStart("ShkoOnline.DataverseExcelReporter.").TrimEnd(".nupkg"))"
+        Write-Host "###vso[task.setvariable variable=ReleaseNotes;isOutput=true]$(Get-Content -Path .\ShkoOnline.DataverseExcelReporter\ReleaseNotes.txt)"
         Rename-Item $nugetPackage ShkoOnline.DataverseExcelReporter.nupkg
-        Move-Item ShkoOnline.DataverseExcelReporter/bin/Debug/ShkoOnline.DataverseExcelReporter.nupkg -destination $(Build.ArtifactStagingDirectory)
-        Copy-Item ShkoOnline.DataverseExcelReporter/ReleaseNotes.txt -Destination $(Build.ArtifactStagingDirectory)\ReleaseNotes.txt
+        Move-Item ShkoOnline.DataverseExcelReporter/bin/Release/ShkoOnline.DataverseExcelReporter.nupkg -destination $(Build.ArtifactStagingDirectory)
+      name: StageArtifacts
       displayName: Move packages to Artifacts Staging Directory
 
     - task: PublishPipelineArtifact@1
@@ -55,3 +57,32 @@ stages:
         artifact: 'ShkoOnline.DataverseExcelReporter'
         publishLocation: 'pipeline'
       displayName: Publish Artifacts
+- stage: Publish
+  displayName: Publish
+  dependsOn: Build
+  variables: 
+    PackageVersion: $[ stageDependencies.Build.Build.outputs['StageArtifacts.PackageVersion']]
+    ReleaseNotes: $[ stageDependencies.Build.Build.outputs['StageArtifacts.ReleaseNotes']]
+  jobs:
+    - deployment: Publish_NuGet
+      displayName: Publish to NuGet
+      environment: Production
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: GitHubRelease@1
+              displayName: 'GitHub release (create)'
+              inputs:
+                gitHubConnection: 'Shko-Online'
+                repositoryName: '$(Build.Repository.Name)'
+                action: 'create'
+                target: '$(Build.SourceVersion)'
+                tagSource: 'userSpecifiedTag'
+                tag: 'v-$(PackageVersion)'
+                title: 'v-$(PackageVersion)'
+                releaseNotesSource: 'inline'
+                releaseNotesInline: '$(ReleaseNotes)'
+                assets: '$(Pipeline.Workspace)\ShkoOnline.DataverseExcelReporter\ShkoOnline.DataverseExcelReporter.nupkg'
+                isDraft: true
+                addChangeLog: false
