@@ -1,4 +1,7 @@
-﻿v1.0.4: 
+﻿v1.0.5: 
+ - Fix PackageIconUrl path.
+
+v1.0.4: 
  - Updated to PackageIconUrl from PackageIcon because XrmToolBox doesn't support it.
 
 v1.0.3: 

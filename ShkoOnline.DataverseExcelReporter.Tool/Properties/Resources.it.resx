@@ -153,4 +153,7 @@ Cordiali saluti,
   <data name="ErrorSaving" xml:space="preserve">
     <value>Errore durante il salvataggio del file del report</value>
   </data>
+  <data name="NO_TABLES" xml:space="preserve">
+    <value>Impossibile recuperare le tabelle. Assicurati di avere accesso ad almeno un modello di documento nell'ambiente selezionato.</value>
+  </data>
 </root>

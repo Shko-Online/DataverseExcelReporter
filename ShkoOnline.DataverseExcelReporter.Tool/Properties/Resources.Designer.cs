@@ -160,6 +160,15 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not retrieve tables. Please make sure you have access to at least one Document Template in your selected environment..
+        /// </summary>
+        internal static string NO_TABLES {
+            get {
+                return ResourceManager.GetString("NO_TABLES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Report saved successfully.
         /// </summary>
         internal static string ReportSaved {

@@ -172,4 +172,7 @@ Best regards,
   <data name="ErrorSaving" xml:space="preserve">
     <value>Error saving the report file</value>
   </data>
+  <data name="NO_TABLES" xml:space="preserve">
+    <value>Could not retrieve tables. Please make sure you have access to at least one Document Template in your selected environment.</value>
+  </data>
 </root>

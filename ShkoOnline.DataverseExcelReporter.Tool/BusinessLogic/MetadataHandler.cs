@@ -64,7 +64,12 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
             var results = GetDocumentTemplates(tables, isPersonal: false, service)
                   .Concat(GetDocumentTemplates(tables, isPersonal: true, service))
                   .OrderBy(x => x.DisplayName)
-                  .ToList();        
+                  .ToList();
+
+            if (tables.Count == 0)
+            {
+                throw new InvalidOperationException(Resources.NO_TABLES);
+            }
 
             GetTableMetadata(tables, metadata, metadataByCode, service);
 

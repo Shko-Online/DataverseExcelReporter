@@ -57,6 +57,7 @@
 
 	<PropertyGroup>
 		<TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludeXrmToolBoxToolAssemblies</TargetsForTfmSpecificContentInPackage>
+		<AssemblyTitle>Dataverse Excel Reporter</AssemblyTitle>
 	</PropertyGroup>
 	<Target Name="IncludeXrmToolBoxToolAssemblies">
 		<ItemGroup>
