@@ -368,6 +368,19 @@ namespace ShkoOnline.DataverseExcelReporter.Tool.BusinessLogic
                 cell.CellValue = new CellValue(((DateTime)value));
                 return;
             }
+            if (typeof(EntityCollection) == value.GetType()) // Activity Parties
+            {
+                cell.DataType = new EnumValue<CellValues>(CellValues.String);
+                var activityParties = value as EntityCollection;
+                cell.CellValue = new CellValue(
+                    string.Join(
+                        ";",
+                        activityParties.Entities.Select(e =>
+                            string.IsNullOrEmpty(e.GetAttributeValue<string>("addressused")) ?
+                                e.GetAttributeValue<EntityReference>("partyid").Name :
+                                e.GetAttributeValue<string>("addressused"))));
+                return;
+            }
             if (entity.FormattedValues.Contains(attributeName))
             {
                 cell.DataType = new EnumValue<CellValues>(CellValues.String);

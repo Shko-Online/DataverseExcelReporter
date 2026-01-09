@@ -1,4 +1,7 @@
-﻿v1.0.5: 
+﻿v1.0.6: 
+ - Added check if the user doesn't have access to any Document Template in the selected environment.
+
+v1.0.5: 
  - Fix PackageIconUrl path.
 
 v1.0.4: 
